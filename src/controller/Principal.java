@@ -18,5 +18,4 @@ public class Principal {
        TelaCadastro tela = new TelaCadastro();
        tela.setVisible(true);
     }
-    
 }

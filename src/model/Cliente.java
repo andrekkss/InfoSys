@@ -6,6 +6,9 @@
 package model;
 
 import dao.ClienteDAO;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.table.DefaultTableModel;
 import util.Checa;
 
 /**
@@ -13,6 +16,7 @@ import util.Checa;
  * @author linux
  */
 public class Cliente {
+    private int codigo;
     private String nome;
     private String cpf;
     private String fone;
@@ -25,6 +29,24 @@ public class Cliente {
         setFone(fone);
         setCelular(celular);
         setEmail(email);
+    }
+    
+    public Cliente(int codigo, String nome, String cpf, String fone, String celular, String email) {
+        this.codigo = codigo;
+        setNome(nome);
+        setCpf(cpf);
+        setFone(fone);
+        setCelular(celular);
+        setEmail(email);
+    }
+    
+    public int getCodigo(){
+        return this.codigo;
+    }
+    
+    
+    private void setCodigo(int codigo){
+        this.codigo = codigo;
     }
     
     /**
@@ -101,6 +123,20 @@ public class Cliente {
     
     public void gravar(){
         ClienteDAO.getInstance().insert(this);
+    }
+ 
+    public static DefaultTableModel getTableModel(){
+        List<Cliente> lista = ClienteDAO.getInstance().select();  
+        DefaultTableModel modelo = new DefaultTableModel();
+        modelo.addColumn("Nome");
+        modelo.addColumn("Telefone");
+        modelo.addColumn("Celular");
+        modelo.addColumn("Email");
+        for (Cliente c: lista){
+            String[] s = {c.getNome(), c.getFone(), c.getCelular(), c.getEmail(), c.getCpf()};
+            modelo.addRow(s);
+        }
+        return modelo;
     }
     
     public String toString() {

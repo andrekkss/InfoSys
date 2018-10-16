@@ -41,6 +41,7 @@ public class TelaCadastro extends javax.swing.JFrame {
         pnButtons = new javax.swing.JPanel();
         btGravar = new javax.swing.JButton();
         btLimpar = new javax.swing.JButton();
+        btListar = new javax.swing.JButton();
         tbCadastro = new javax.swing.JTabbedPane();
         pnCliente = new javax.swing.JPanel();
         lbNome = new javax.swing.JLabel();
@@ -118,12 +119,21 @@ public class TelaCadastro extends javax.swing.JFrame {
             }
         });
 
+        btListar.setText("Listar");
+        btListar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btListarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout pnButtonsLayout = new javax.swing.GroupLayout(pnButtons);
         pnButtons.setLayout(pnButtonsLayout);
         pnButtonsLayout.setHorizontalGroup(
             pnButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnButtonsLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btListar)
+                .addGap(26, 26, 26)
                 .addComponent(btLimpar)
                 .addGap(28, 28, 28)
                 .addComponent(btGravar, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -136,7 +146,8 @@ public class TelaCadastro extends javax.swing.JFrame {
             pnButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                 .addComponent(btGravar)
-                .addComponent(btLimpar))
+                .addComponent(btLimpar)
+                .addComponent(btListar))
         );
 
         tbCadastro.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -167,10 +178,9 @@ public class TelaCadastro extends javax.swing.JFrame {
                 .addGroup(pnClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(tfCliEmail, javax.swing.GroupLayout.DEFAULT_SIZE, 336, Short.MAX_VALUE)
                     .addComponent(tfCliNome)
-                    .addGroup(pnClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(tfCliCelular, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 169, Short.MAX_VALUE)
-                        .addComponent(tfCliFone, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(tfCliCPF, javax.swing.GroupLayout.Alignment.LEADING)))
+                    .addComponent(tfCliCelular, javax.swing.GroupLayout.DEFAULT_SIZE, 336, Short.MAX_VALUE)
+                    .addComponent(tfCliFone)
+                    .addComponent(tfCliCPF))
                 .addContainerGap(46, Short.MAX_VALUE))
         );
         pnClienteLayout.setVerticalGroup(
@@ -410,6 +420,11 @@ public class TelaCadastro extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btLimparActionPerformed
 
+    private void btListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btListarActionPerformed
+        TelaConsulta tela = new TelaConsulta();
+        tela.setVisible(true);
+    }//GEN-LAST:event_btListarActionPerformed
+
     private void limpaTelaProduto() {
         tfProDescricao.setText("");
         spProEstoque.setValue(0);
@@ -480,6 +495,7 @@ public class TelaCadastro extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btGravar;
     private javax.swing.JButton btLimpar;
+    private javax.swing.JButton btListar;
     private javax.swing.JCheckBox cbProAtivo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
