@@ -15,7 +15,7 @@ import java.sql.SQLException;
  */
 public class ConnectionFactory {
 
-    private static final String URL = "jdbc:sqlite:/home/linux/NetBeansProjects/InfoSysManha/db/InfoSysDB.db";
+    private static final String URL = "jdbc:sqlite:/home/andre/InfoSys/db/InfoSysDB.db";
 //    private static final String URL = "jdbc:mysql://192.168.0.50:3306/Faculdade";
 
     public static Connection getConnection() {

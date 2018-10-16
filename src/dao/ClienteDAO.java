@@ -22,7 +22,7 @@ public class ClienteDAO implements Persistencia<Cliente> {
 
     private static ClienteDAO dao;
     
-    private ClienteDAO(){
+    public ClienteDAO(){
     }
     
     public static ClienteDAO getInstance(){
