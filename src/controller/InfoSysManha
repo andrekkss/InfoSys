@@ -1,0 +1,51 @@
+Aula 1:
+    - criar projeto InfoSys
+    - packages model / view / controller
+    - view.TelaCadastro
+        - tabbedPane + panel (Cliente / Produto / Serviço / Técnico)
+    - package resources
+        - trazer imagens 
+    - tela Cliente 
+    - model.Cliente
+        - Nome / CPF / Fone / Celular / Email
+    - botão gravar
+        - new Cliente
+        - construtor
+        - imprimir dados (toString)
+    - botão limpar
+        - limpar campos
+        - ajustar foco
+
+Aula 2:
+    - replicar para Produto / Técnico
+    - botão gravar
+        - selecionar gravação por panel
+        - implementar construtor / toString 
+    - botão limpar
+
+Aula 3:
+    - util.Configura 
+        - ajustar look and feel
+    - util.Formata
+        - formatar CPF
+        - replicar para fone / celular
+    - base de dados no sqlite
+        - cliente
+
+Aula 4:
+    - persistência
+        - acertar conexão do Netbeans com SQLite
+        - criar dao.ConnectionFactory
+        - testar conexão
+
+    - criar interface persistência
+        - métodos: create / read / update / delete / findByID / findByName
+    - criar crud para Cliente
+        - implementar método create
+        - testar gravação de registro
+        - implementar método read
+        - listar os clientes cadastrados
+
+Aula 5:
+    - exercício: criar crud para Produto / Técnico
+    - implementar métodos update / delete / findByID
